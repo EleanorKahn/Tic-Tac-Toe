@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Square from './components/Square';
+import { findWinner } from './helper';
 
 export default function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [isX, setIsX] = useState(true);
 
     function handleClick(i) {
-        if (squares[i]) {
+        if (squares[i] || findWinner(squares)) {
             return;
         } 
         const newSquare = squares.slice();
