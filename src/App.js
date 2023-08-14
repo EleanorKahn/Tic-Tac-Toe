@@ -3,14 +3,21 @@ import Square from './components/Square';
 
 export default function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
+    const [isX, setIsX] = useState(true);
 
     function handleClick(i) {
+        if (squares[i]) {
+            return;
+        } 
         const newSquare = squares.slice();
-        newSquare[i] = 'X';
+        if (isX) {
+            newSquare[i] = 'X';
+        } else {
+            newSquare[i] = 'O';
+        }
+        setIsX(!isX);
         setSquares(newSquare);
     }
-
-    const squid = () => {}
 
     return (
         <React.Fragment>
