@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import Square from './components/Square';
+import Winner from './components/Winner';
 import { findWinner } from './helper';
 
 export default function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
     const [isX, setIsX] = useState(true);
+
+    const winner = findWinner(squares);
+    let status = "";
+    if (winner) {
+        status = `Player ${winner} has won!`
+    } else {
+        status = isX ? "X's turn next" : "O's turn next";
+    }
 
     function handleClick(i) {
         if (squares[i] || findWinner(squares)) {
@@ -16,12 +25,14 @@ export default function Board() {
         } else {
             newSquare[i] = 'O';
         }
+        
         setIsX(!isX);
         setSquares(newSquare);
     }
 
     return (
         <React.Fragment>
+            <Winner message={status}/>
             <div className='board-row'>
                 <Square value={squares[0]} handleSubmit={() => handleClick(0)} />
                 <Square value={squares[1]} handleSubmit={() => handleClick(1)} />

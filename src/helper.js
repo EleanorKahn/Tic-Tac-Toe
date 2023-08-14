@@ -13,9 +13,9 @@ export const findWinner = (squares) => {
     for (let i = 0; i < win.length; i++) {
         let [a, b, c] = win[i];
         if (squares[a] && squares[a] === squares[b] && squares[b] === squares[c] && squares[a] === squares[c]) {
-            console.log('someone won!');
             return squares[a];
         }
     }
     return;
 };
+
