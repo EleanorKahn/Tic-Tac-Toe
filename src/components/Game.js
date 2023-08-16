@@ -9,8 +9,12 @@ const Game = () => {
     const [isX, setIsX] = useState(true);
 
     function handlePlay(next) {
-        //do
-    }
+    
+        setHistory([...history, next]);
+        //from the handle click method.
+        //this piece of state is being lifted from the Board.js
+        setIsX(!isX);
+    };
 
     return (
         <div className='game'>
