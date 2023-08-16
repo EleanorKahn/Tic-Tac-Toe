@@ -1,5 +1,5 @@
 ### Learning Goals
-This is the frontend of a fullstack project. The goal is to have users play each other, and be able to log in and see their previous scores and history of wins/losses. I chose the official react tutorial for my frontend. 
+This is the frontend of a fullstack project. The goal is to have users play each other, and be able to log in and see their previous scores and history of wins/losses. I chose the official react tutorial for my frontend, as I think it can be especially valuable to follow the thinking of those who maintain the official library/framework/tool. 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
