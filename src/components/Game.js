@@ -5,6 +5,12 @@ const Game = () => {
     
     //this will become an array of arrays, as we fill it with the game's history
     const [history, setHistory] = useState(Array[9].fill(null));
+    //isX state moving to parent component of board
+    const [isX, setIsX] = useState(true);
+
+    function handlePlay(next) {
+        //do
+    }
 
     return (
         <div className='game'>
