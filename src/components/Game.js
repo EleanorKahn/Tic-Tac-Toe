@@ -9,12 +9,26 @@ const Game = () => {
     const [isX, setIsX] = useState(true);
 
     function handlePlay(next) {
-    
+
         setHistory([...history, next]);
         //from the handle click method.
         //this piece of state is being lifted from the Board.js
         setIsX(!isX);
     };
+
+    const moves = history.map((squares, move) => {
+        let directions;
+        if (move > 0) {
+            directions = 'Go to move #' + move;
+        } else {
+            directions = 'Go to game start';
+        }
+        return (
+            <li key={move}>
+                <button onClick={() => jumpTo(move)}>{directions}</button>
+            </li>
+        );
+    });
 
 
     return (
