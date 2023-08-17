@@ -7,6 +7,8 @@ const Game = () => {
     const [history, setHistory] = useState(Array[9].fill(null));
     //isX state moving to parent component of board
     const [isX, setIsX] = useState(true);
+    const [currentMove, setCurrentMove] = useState(0);
+    const currentSquares = history[history.length - 1];
 
     function handlePlay(next) {
 
@@ -15,6 +17,11 @@ const Game = () => {
         //this piece of state is being lifted from the Board.js
         setIsX(!isX);
     };
+
+    function jumpTo(nextMove) {
+        setCurrentMove(nextMove);
+        setIsX(nextMove % 2 === 0);
+    }
 
     const moves = history.map((squares, move) => {
         let directions;
