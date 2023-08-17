@@ -16,6 +16,24 @@ const Game = () => {
         setIsX(!isX);
     };
 
+    function jumpTo(next) {
+        //todo
+    }
+
+    const writeMoves = history.map((squares, move) => {
+        let description;
+        if (move > 0) {
+            description = `Go to move #${move}`;
+        } else {
+            description = `Go to game start`;
+        }
+        return (
+            <li>
+                <button onClick={() => jumpTo(move)}>{description}</button>
+            </li>
+        )
+    });
+
     return (
         <div className='game'>
             <div>
