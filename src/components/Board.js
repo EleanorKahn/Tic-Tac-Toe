@@ -28,6 +28,7 @@ export default function Board() {
         
         setIsX(!isX);
         setSquares(newSquare);
+        console.log(squares);
     }
 
     return (
