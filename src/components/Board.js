@@ -3,9 +3,7 @@ import Square from './Square';
 import Winner from './Winner';
 import { findWinner } from '../helper';
 
-export default function Board() {
-    const [squares, setSquares] = useState(Array(9).fill(null));
-    const [isX, setIsX] = useState(true);
+export default function Board({ isX, squares, handlePlay}) {
 
     const winner = findWinner(squares);
     let status = "";
